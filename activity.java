@@ -14,8 +14,21 @@ public class activity {
     }
 
     public void setCost(int cost){
-
+        this.cost = cost;
     }
+
+    public void setCapacity(int capacity){
+        this.capacity = capacity;
+    }
+
+    public void setName(String name){
+        this.name = name;
+    }
+
+    public void setDescription(String description){
+        this.description = description;
+    }
+
     public boolean hasSpace(){
         return availableSpace!=0;
     }
