@@ -13,25 +13,21 @@ public class activity {
         this.availableSpace = this.capacity;
     }
 
+    public void setCost(int cost){
+
+    }
     public boolean hasSpace(){
         return availableSpace!=0;
     }
 
     public boolean signActivity(passenger p){
-        if(hasSpace()) return false;
-        availableSpace--;
-        if(p.membership == "standard" && p.balance>=cost){
-            p.balance -= cost; return true;
-        }
-        else if(p.membership == "gold" && p.balance>=0.9 * cost){ 
-            p.balance -= (0.9)*cost; return true;
-        }
-        else if(p.membership == "premium") return true;
-        availableSpace++;
-        return false;
+        if(!hasSpace()) return false;
+        float value = cost - (p.getMembership()=="standard" ? 0 : (p.getMembership()=="gold" ? 0.1f*cost : cost));
+        if(value<p.getBalance()) return false;
+        availableSpace--; return true;
     }
 
-    public void details(){
+    public void getDetails(){
         System.out.println("Name: " + name);
         System.out.println("Description: " + description);
         System.out.println("Cost: " + cost);
