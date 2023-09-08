@@ -4,15 +4,23 @@ import java.util.List;
 public class passenger{
     private String name;
     private int number;
-    String membership;
-    private List<activity> activities;
-    float balance;
+    private String membership;
+    private List<activity> signedActivities;
+    private float balance;
     
+    public String getMembership(){
+        return membership;
+    }
+
+    public float getBalance(){
+        return balance;
+    }
+
     public passenger(String name, int number, String membership, float balance){
         this.name = name;
         this.number = number;
         this.membership = membership;
-        this.activities = new ArrayList<activity>();  
+        this.signedActivities = new ArrayList<activity>();  
         this.balance = balance;
     }
 
@@ -30,16 +38,15 @@ public class passenger{
         System.out.println("Number of Passenger: " + number);
         System.out.println("Balance: " + balance);
         System.out.println("Activities signed by passenger: ");
-        for(int i=0;i<activities.size();i++){
-            activity a = activities.get(i);
+        for(int i=0;i<signedActivities.size();i++){
             System.out.println(i+1 + " Activity");
-            a.details();
+            signedActivities.get(i).getDetails();
         }
 
     }
     public void addActivity(activity a){
         if(a.signActivity(this)){
-            activities.add(a);
+            signedActivities.add(a);
         }
         else{
             System.out.println("You are not eligible to signed for this activity");
