@@ -33,11 +33,13 @@ public class activity {
         return availableSpace!=0;
     }
 
-    public boolean signActivity(passenger p){
+    public boolean signActivity(passenger passenger1){
         if(!hasSpace()) return false;
-        float value = cost - (p.getMembership()=="standard" ? 0 : (p.getMembership()=="gold" ? 0.1f*cost : cost));
-        if(value<p.getBalance()) return false;
-        availableSpace--; return true;
+        float value = cost - (passenger1.getMembership()=="standard" ? 0 : (passenger1.getMembership()=="gold" ? 0.1f*cost : cost));
+        if(value<passenger1.getBalance()) return false;
+        availableSpace--; 
+        passenger1.payAmount(value); 
+        return true;
     }
 
     public void getDetails(){
