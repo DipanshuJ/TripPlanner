@@ -20,13 +20,9 @@ public class trip {
         return true;
     }
 
-    public void passengerInformation(){
+    public void passengerList(){
         System.out.println("Trip Package name: " + name);
         System.out.println("Trip Package capacity: " + capacity);
-        System.out.println("Destinations list: ");
-        for(int i=0;i<destinations.size();i++){
-            System.out.println((i+1) + ". " + destinations.get(i));
-        }
         System.out.println("Passengers Information: ");
         for(int i=0;i<passengers.size();i++){
             System.out.print((i+1) + ". ");
@@ -39,7 +35,8 @@ public class trip {
         System.out.println("Trip Package capacity: " + capacity);
         System.out.println("Destinations: ");
         for(int i=0;i<destinations.size();i++){
-            System.out.println((i+1) + ". " + destinations.get(i));
+            System.out.println((i+1) + ". " + destinations.get(i).getName());
+            destinations.get(i).printAllActivities();
         }
     }
 }
