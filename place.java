@@ -15,13 +15,25 @@ public class place {
         this.activities = activities;
     }
 
-    public void addActivity(activity a){
-        activities.add(a);
+    public String getName(){
+        return name;
+    }
+
+    public void addActivity(activity act){
+        activities.add(act);
+    }
+
+    public void printAllActivities(){
+        System.out.println("Activities: ");
+        for(int i=0;i<activities.size();i++){
+            System.out.print((i+1) + ". ");
+            activities.get(i).getDetails();
+        }
     }
 
     public void listActivitiesHasSpace(){
         for(int i=0;i<activities.size();i++){
-            if(activities.get(i).hasSpace()) activities.get(i).details();
+            if(activities.get(i).hasSpace()) activities.get(i).getDetails();
         }
     }
 }
