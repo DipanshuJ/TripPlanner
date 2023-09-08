@@ -16,6 +16,10 @@ public class passenger{
         return balance;
     }
 
+    public void payAmount(float cost){
+        balance-=cost;
+    }
+
     public passenger(String name, int number, String membership, float balance){
         this.name = name;
         this.number = number;
@@ -24,12 +28,12 @@ public class passenger{
         this.balance = balance;
     }
 
-    public void addBalance(float val){
-        if(val<=0){
+    public void addBalance(float addedBalance){
+        if(addedBalance<=0){
             System.out.println("Amount to be added must be greater than zero");
         }
         else{
-            this.balance += val;
+            this.balance += addedBalance;
         }
     }
 
