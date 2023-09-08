@@ -14,9 +14,9 @@ public class trip {
         this.capacity = capacity;
     }
 
-    public boolean addPassengger(passenger p){
+    public boolean addPassengger(passenger tripPassenger){
         if(capacity == passengers.size()) return false;
-        passengers.add(p);
+        passengers.add(tripPassenger);
         return true;
     }
 
