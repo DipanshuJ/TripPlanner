@@ -31,7 +31,7 @@ public class place {
         }
     }
 
-    public void listActivitiesHasSpace(){
+    public void printActivitiesHasSpace(){
         for(int i=0;i<activities.size();i++){
             if(activities.get(i).hasSpace()) activities.get(i).getDetails();
         }
